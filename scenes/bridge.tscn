@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpn8k0cbc8ag8"]
+
+[ext_resource type="Texture2D" uid="uid://bybe78tdc4s6h" path="res://sprites/map/tileset.png" id="1_p8nuk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv0wa"]
+size = Vector2(62.0024, 16)
+
+[node name="Bridge" type="StaticBody2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(48, 2)
+texture = ExtResource("1_p8nuk")
+region_enabled = true
+region_rect = Rect2(176, 160, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(32, 2)
+texture = ExtResource("1_p8nuk")
+region_enabled = true
+region_rect = Rect2(176, 160, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(16, 2)
+texture = ExtResource("1_p8nuk")
+region_enabled = true
+region_rect = Rect2(176, 160, 16, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("1_p8nuk")
+region_enabled = true
+region_rect = Rect2(176, 160, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24.0011, 2.0631)
+shape = SubResource("RectangleShape2D_gv0wa")
+one_way_collision = true
