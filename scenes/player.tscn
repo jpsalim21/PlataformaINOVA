@@ -133,6 +133,7 @@ animations = [{
 radius = 7.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 4
 script = ExtResource("1_867up")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
