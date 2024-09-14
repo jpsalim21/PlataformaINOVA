@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://ighjye8pwkar"]
+
+[ext_resource type="Texture2D" uid="uid://bnjsw6rdtjtf3" path="res://sprites/oposum.png" id="1_u7af3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqqbe"]
+atlas = ExtResource("1_u7af3")
+region = Rect2(0, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp3mf"]
+atlas = ExtResource("1_u7af3")
+region = Rect2(36, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y8om"]
+atlas = ExtResource("1_u7af3")
+region = Rect2(72, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmdoq"]
+atlas = ExtResource("1_u7af3")
+region = Rect2(108, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2yi1"]
+atlas = ExtResource("1_u7af3")
+region = Rect2(144, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u443b"]
+atlas = ExtResource("1_u7af3")
+region = Rect2(180, 0, 36, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfaoy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqqbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp3mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y8om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmdoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2yi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u443b")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kk2ph"]
+
+[node name="Opusum" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tfaoy")
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.5804
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 4)
+shape = SubResource("CircleShape2D_kk2ph")
+
+[node name="Timer" type="Timer" parent="."]

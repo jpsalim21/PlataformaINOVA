@@ -456,7 +456,7 @@ limit_top = -128
 limit_right = 96
 limit_bottom = 288
 
-[node name="Collectables" type="Node2D" parent="."]
+[node name="Collectables" type="Node" parent="."]
 
 [node name="Cherry6" parent="Collectables" instance=ExtResource("4_jouqt")]
 position = Vector2(-447, 127)
