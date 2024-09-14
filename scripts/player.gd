@@ -2,11 +2,15 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 
 
-const SPEED = 130.0
+var SPEED = 130.0
 const JUMP_VELOCITY = -260.0
-
+var DIED = false
 
 func _physics_process(delta: float) -> void:
+	if DIED == true:
+		SPEED = 0
+		sprite.play("die")
+		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
@@ -22,8 +26,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	
-
 	if is_on_floor():
 		if direction == 0:
 			sprite.play("idle")

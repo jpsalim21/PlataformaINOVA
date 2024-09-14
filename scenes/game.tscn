@@ -478,4 +478,4 @@ position = Vector2(-376, -77)
 position = Vector2(-358, -77)
 
 [node name="Opusum" parent="." instance=ExtResource("5_15x4n")]
-position = Vector2(-54, -14)
+position = Vector2(-132, -14)
