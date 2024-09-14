@@ -460,13 +460,13 @@ limit_bottom = 288
 [node name="Collectables" type="Node" parent="."]
 
 [node name="Cherry6" parent="Collectables" instance=ExtResource("4_jouqt")]
-position = Vector2(-447, 127)
+position = Vector2(-447, 129)
 
 [node name="Cherry5" parent="Collectables" instance=ExtResource("4_jouqt")]
-position = Vector2(-465, 127)
+position = Vector2(-465, 129)
 
 [node name="Cherry4" parent="Collectables" instance=ExtResource("4_jouqt")]
-position = Vector2(-429, 127)
+position = Vector2(-429, 129)
 
 [node name="Cherry1" parent="Collectables" instance=ExtResource("4_jouqt")]
 position = Vector2(-340, -77)
@@ -477,5 +477,16 @@ position = Vector2(-376, -77)
 [node name="Cherry3" parent="Collectables" instance=ExtResource("4_jouqt")]
 position = Vector2(-358, -77)
 
-[node name="Opusum" parent="." instance=ExtResource("5_15x4n")]
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Opusum3" parent="Enemies" instance=ExtResource("5_15x4n")]
+position = Vector2(-336, -14)
+
+[node name="Opusum4" parent="Enemies" instance=ExtResource("5_15x4n")]
+position = Vector2(-433, -14)
+
+[node name="Opusum2" parent="Enemies" instance=ExtResource("5_15x4n")]
+position = Vector2(-479, 178)
+
+[node name="Opusum" parent="Enemies" instance=ExtResource("5_15x4n")]
 position = Vector2(-132, -14)

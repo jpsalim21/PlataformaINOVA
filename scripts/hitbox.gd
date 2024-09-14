@@ -1,12 +1,15 @@
 extends Area2D
 
 @onready var timer = $Timer
-@onready var player = get_node("/root/Game/Player")
-@onready var player_sprite = get_node("/root/Game/Player/AnimatedSprite2D")
-@onready var enemy_sprite = get_parent().get_node("AnimatedSprite2D")
+@onready var enemy_sprite = get_parent().get_node("AnimatedSprite2D") 
+
+var player : CharacterBody2D = null
 
 func _on_body_entered(body: Node2D) -> void:
-	if not player_sprite.animation == "fall": 
+	player = body
+	var player_sprite = player.get_node("AnimatedSprite2D")
+	
+	if not player_sprite.animation == "fall":
 		timer.start()
 		player.DIED = true
 	else:

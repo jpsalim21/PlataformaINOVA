@@ -110,7 +110,7 @@ script = ExtResource("1_06yhj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tfaoy")
-animation = &"death"
+animation = &"walking"
 autoplay = "walking"
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
