@@ -1,8 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://ighjye8pwkar"]
+[gd_scene load_steps=19 format=3 uid="uid://ighjye8pwkar"]
 
 [ext_resource type="Script" path="res://scripts/opusum.gd" id="1_06yhj"]
 [ext_resource type="Texture2D" uid="uid://bnjsw6rdtjtf3" path="res://sprites/oposum.png" id="1_u7af3"]
-[ext_resource type="PackedScene" uid="uid://dmjvm4gj58lyg" path="res://scenes/killzone.tscn" id="3_fnyoh"]
+[ext_resource type="Texture2D" uid="uid://dq0aa48n7erjx" path="res://sprites/enemy-deadth.png" id="2_vfdvs"]
+[ext_resource type="PackedScene" uid="uid://dmjvm4gj58lyg" path="res://scenes/hitbox.tscn" id="3_fnyoh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3kmd"]
+atlas = ExtResource("2_vfdvs")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsh4j"]
+atlas = ExtResource("2_vfdvs")
+region = Rect2(40, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vinno"]
+atlas = ExtResource("2_vfdvs")
+region = Rect2(80, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd4cl"]
+atlas = ExtResource("2_vfdvs")
+region = Rect2(120, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fhk3"]
+atlas = ExtResource("2_vfdvs")
+region = Rect2(160, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6djie"]
+atlas = ExtResource("2_vfdvs")
+region = Rect2(200, 0, 40, 41)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wp3mf"]
 atlas = ExtResource("1_u7af3")
@@ -30,6 +55,29 @@ region = Rect2(0, 0, 36, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tfaoy"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3kmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsh4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vinno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd4cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fhk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6djie")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wp3mf")
@@ -62,10 +110,8 @@ script = ExtResource("1_06yhj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tfaoy")
-animation = &"walking"
+animation = &"death"
 autoplay = "walking"
-frame = 1
-frame_progress = 0.2441
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(-2, 4)
@@ -82,3 +128,5 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(-4.5, 4)
 shape = SubResource("RectangleShape2D_5yewl")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

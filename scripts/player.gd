@@ -9,7 +9,7 @@ var DIED = false
 func _physics_process(delta: float) -> void:
 	if DIED == true:
 		SPEED = 0
-		sprite.play("die")
+		sprite.play("death")
 		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta

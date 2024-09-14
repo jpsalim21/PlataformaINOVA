@@ -4,11 +4,11 @@ extends Node2D
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 
 
-const SPEED = 40.0
+var SPEED = 40.0
 
 var direction = 1
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:	
 	position.x += direction * SPEED * delta
 	
 	if ray_cast_right.is_colliding():
@@ -20,3 +20,7 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 	else:
 		sprite.flip_h = false
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "death":
+		queue_free()
