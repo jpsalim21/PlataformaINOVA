@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="PlataformaINOVA"
+config/name="PlataformaINOVA_Wesley"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="PlataformaINOVA_Wesley"
 
 [input]
 
