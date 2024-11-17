@@ -3,12 +3,11 @@ extends Node2D
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 
-
 var SPEED = 40.0
 
 var direction = 1
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
 	position.x += direction * SPEED * delta
 	
 	if ray_cast_right.is_colliding():
@@ -24,3 +23,20 @@ func _physics_process(delta: float) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "death":
 		queue_free()
+
+
+@onready var timer: Timer = $Timer
+
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	var player = body as Player
+	if player:
+		if not player.sprite.animation == "fall":
+			timer.start()
+			player.DIED = true
+		else:
+			SPEED = 0
+			sprite.play("death")
+			player.velocity.y = player.JUMP_VELOCITY

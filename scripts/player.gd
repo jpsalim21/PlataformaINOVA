@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
-@onready var sprite = $AnimatedSprite2D
 
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
 var SPEED = 130.0
 const JUMP_VELOCITY = -260.0
