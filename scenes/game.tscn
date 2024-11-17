@@ -237,10 +237,12 @@ position = Vector2(-17, -16)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3.5, 3.5)
+process_callback = 0
 limit_left = -848
 limit_top = -128
 limit_right = 96
 limit_bottom = 288
+position_smoothing_enabled = true
 
 [node name="Collectables" type="Node" parent="."]
 

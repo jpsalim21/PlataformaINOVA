@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://ighjye8pwkar"]
+[gd_scene load_steps=18 format=3 uid="uid://ighjye8pwkar"]
 
 [ext_resource type="Script" path="res://scripts/inimigo.gd" id="1_06yhj"]
 [ext_resource type="Texture2D" uid="uid://bnjsw6rdtjtf3" path="res://sprites/oposum.png" id="1_u7af3"]
 [ext_resource type="Texture2D" uid="uid://dq0aa48n7erjx" path="res://sprites/enemy-deadth.png" id="2_vfdvs"]
-[ext_resource type="PackedScene" uid="uid://dmjvm4gj58lyg" path="res://scenes/hitbox.tscn" id="3_fnyoh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3kmd"]
 atlas = ExtResource("2_vfdvs")
@@ -102,7 +101,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yewl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axpni"]
 size = Vector2(25, 20)
 
 [node name="Opusum" type="Node2D"]
@@ -123,11 +122,11 @@ position = Vector2(-2, 4)
 target_position = Vector2(20, 0)
 collision_mask = 8
 
-[node name="Killzone" parent="." instance=ExtResource("3_fnyoh")]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4.5, 4)
-shape = SubResource("RectangleShape2D_5yewl")
+shape = SubResource("RectangleShape2D_axpni")
 
 [node name="Timer" type="Timer" parent="."]
 
