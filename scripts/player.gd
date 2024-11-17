@@ -42,9 +42,3 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = false
 	elif direction < 0:
 		sprite.flip_h = true
-
-func morrer():
-	sprite.play("death")
-	set_physics_process(false)
-	await get_tree().create_timer(1).timeout
-	get_tree().reload_current_scene()
